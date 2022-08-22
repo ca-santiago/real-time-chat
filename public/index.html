@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=j, initial-scale=1.0">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js" integrity="sha512-9mpsATI0KClwt+xVZfbcf2lJ8IFBAwsubJ6mI3rtULwyM3fBmQFzj0It4tGqxLOGQwGfJdk/G+fANnxfq9/cew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <title>My chat</title>
+</head>
+<body>
+    <p>Temporal MSG</p>
+    <div id="connection-count"></div>
+    <div>
+        <input id="input-chat" type="text">
+        <button id="btn-send">Enviar</button>
+    </div>
+    <div id="chat-container">
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

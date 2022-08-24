@@ -9,14 +9,57 @@
     <title>My chat</title>
 </head>
 <body>
+    <style>
+        * {
+            font-family: sans-serif; 
+            padding: 0;
+            margin: 0;
+        }
+
+        #chat-container {
+            list-style: none;
+            background: rgb(65, 70, 98);
+            width: 300px;
+            height: 400px;
+            border-radius: 0.2em;
+            position: relative;
+            box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
+            box-sizing: content-box;
+            overflow-y: scroll;
+        }
+
+        .single-message-container {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-message {
+            padding: 5px;
+            border-radius: 3px;
+            max-width: 60%;
+            min-width: 55%;
+            color: white;
+            background-color: rgb(56, 115, 119);
+        }
+        
+        .self-message {
+            background-color: rgb(31, 122, 81);
+            align-self: end;
+        }
+    </style>
     <p>Temporal MSG</p>
+    <p id="member-name"></p>
     <div id="connection-count"></div>
     <div>
         <input id="input-chat" type="text">
         <button id="btn-send">Enviar</button>
     </div>
-    <div id="chat-container">
-    </div>
+    <ul id="chat-container">
+        
+    </ul>
     <script src="./main.js"></script>
 </body>
 </html>

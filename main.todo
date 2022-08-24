@@ -1,6 +1,9 @@
 
 # Connection list not being updated
-[ ] Log emiting count updated on server and client side
+[x] Log emiting count updated on server and client side
+[x] Chat basic style
+[ ] Preserv chat messages
+[ ] User name to header
 
 
 

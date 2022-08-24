@@ -16,21 +16,23 @@ io.on("connection", registerNewSocketConnection);
 let connected = [];
 
 function registerNewSocketConnection(socket) {
-  socket.emit("join", {message: "Welcome to the server"});
+  const userName = socket.id.slice(0, 3);
+  const id = socket.id;
+  socket.emit("join", {userName, userId: id });
   socket.on("disconnect", () => handleDisconnection(socket));
 
   // Register new connection server side count
-  connected.push(socket.id);
-  socket.emit("member-list-update", {count: connected.length});
+  connected.push({id, userName});
+  io.emit("member-list-update", {count: connected.length});
 
   socket.on("new-message", ({message}) => {
-    io.emit("message", {message, date: new Date()})
+    io.emit("message", {message, date: new Date(), userName, userId: id })
   });
 }
 
 function handleDisconnection(socket) {
-  connected = connected.filter(id => id !== socket.id);
-  socket.emit("member-list-update", {count: connected.length});
+  connected = connected.filter(({id}) => id !== socket.id);
+  io.emit("member-list-update", {count: connected.length});
 }
 
 
